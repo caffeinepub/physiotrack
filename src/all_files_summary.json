@@ -1,0 +1,18 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no implemented methods.",
+  "feature_evidence.json": "Defines feature evidence entries mapping requirements to frontend files and components with high-confidence metadata.",
+  "frontend-file-summaries.txt": "Contains prewritten 1–2 sentence summaries for key frontend files including components, styles, and utilities.",
+  "frontend/index.css": "Tailwind base and theme variables defining light/dark color palettes and global styling tokens.",
+  "frontend/index.html": "HTML shell that mounts the React app and loads main.tsx.",
+  "frontend/src/App.tsx": "Root React component rendering the PhysioTrackLanding page.",
+  "frontend/src/components/DailyCheckIn.tsx": "Interactive check‑in form with sliders that computes a health score and displays personalized tips upon submission.",
+  "frontend/src/components/PhysioTrackLanding.tsx": "Landing page with hero section, features overview, generated images, and optional daily check‑in flow.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages an authenticated or anonymous backend actor using React Query.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and hooks for handling Internet Identity login, persistence, and status tracking.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file for future backend‑related React Query hooks.",
+  "frontend/src/index.css": "Defines Tailwind layers and sets light/dark OKLCH color variables and base styles for the app.",
+  "frontend/src/lib/scoring.ts": "Provides health score calculation logic and generates personalized tips based on daily check‑in data.",
+  "frontend/src/main.tsx": "Bootstraps the React app with React Query and Internet Identity providers and loads global styles.",
+  "frontend/tailwind.config.js": "Configures Tailwind theme extensions, custom colors from CSS variables, animations, and plugins.",
+  "project_state.json": "Stores the project’s state, features, requirements, and image asset needs for the PhysioTrack app."
+}

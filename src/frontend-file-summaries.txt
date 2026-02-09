@@ -1,0 +1,9 @@
+{
+  "frontend/src/index.css": "Global styles with warm earth tones (terracotta, sage green) and health-focused accent colors using OKLCH color system for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom fonts (Outfit display font), extended color palette, soft shadows, and fade-in animation.",
+  "frontend/src/App.tsx": "Root application component that renders the PhysioTrackLanding page.",
+  "frontend/src/components/PhysioTrackLanding.tsx": "Single-page landing component with header, hero section with generated images, feature cards explaining the check-in process, benefits section, and conditional daily check-in display with smooth scrolling.",
+  "frontend/src/components/DailyCheckIn.tsx": "Interactive questionnaire component with six slider inputs (sleep, stress, pain, activity, hydration, mood), submit functionality that displays calculated health score and personalized tips, and retake option.",
+  "frontend/src/lib/scoring.ts": "Pure utility functions for calculating health scores (0-100) based on weighted questionnaire responses and generating 3-5 personalized tips that vary based on user input thresholds.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks; currently empty as the app uses only frontend state without backend persistence."
+}

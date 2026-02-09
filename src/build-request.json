@@ -1,0 +1,105 @@
+{
+  "kind": "build_request",
+  "title": "One-page PhysioTrack landing + daily check-in scoring UI",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page website (one route) for the PhysioTrack app that clearly explains what the app does: asks users about their day, generates a health score, and provides tips.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "create a website for my app, PhysioTrack which asks you about your day and gives you a health score based on that, it gives you tips aswell, make one page for the link"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigating to the app root shows a single-page layout (no additional pages required to understand/use the site).",
+        "The page includes clear sections describing: daily check-in, health score output, and tips guidance.",
+        "All user-facing text is in English and references the product name “PhysioTrack”."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add an interactive “Daily Check-in” section on the same page with a short questionnaire (e.g., sleep, stress, pain/soreness, activity, hydration, mood) and a submit action that calculates and displays a health score (0–100) along with 3–5 actionable tips based on the answers.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "asks you about your day and gives you a health score based on that, it gives you tips aswell"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The user can fill out the daily check-in inputs and submit without leaving the page.",
+        "After submit, the UI displays a numeric health score between 0 and 100.",
+        "After submit, the UI displays a list of tips that changes based on the user’s answers (not a fixed, always-identical list).",
+        "The UI includes a clear way to retake/edit the check-in and recalculate the score."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Establish a coherent, distinctive visual theme for the one-page site (colors, typography, spacing, and component styling) and apply it consistently across hero, sections, form, and score/tips output. Avoid a blue/purple-dominant palette.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "create a website for my app, PhysioTrack"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The page uses a consistent design system (buttons, inputs, cards, headings) aligned to one chosen theme.",
+        "The primary palette is not blue/purple-dominant.",
+        "The layout is responsive and remains usable on mobile and desktop."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add generated static image assets for the PhysioTrack one-page site and render them on the page (served from frontend/public/assets/generated).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "create a website for my app, PhysioTrack"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All required generated images are present under frontend/public/assets/generated with the exact filenames specified.",
+        "The landing page renders the generated images (e.g., hero/brand mark) without fetching them from the backend."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend: Do not edit files under frontend/src/components/ui or any immutable paths listed by the system (compose them instead).",
+    "Backend: Keep to a single Motoko actor if backend work becomes necessary; do not introduce additional services or databases."
+  ],
+  "nonGoals": [
+    "Implementing Internet Identity login/authentication.",
+    "Persisting user check-ins or scores across sessions (no backend storage required for this request).",
+    "Building multiple pages, dashboards, or admin panels beyond the single landing page."
+  ],
+  "imageRequirements": {
+    "required": [
+      "PhysioTrack hero illustration featuring a person doing gentle physiotherapy stretches with abstract health/metrics elements (physiotrack-hero.dim_1600x900.png)",
+      "Minimal, modern app mark/logo symbol (no text), health/physio inspired (physiotrack-mark.dim_512x512.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

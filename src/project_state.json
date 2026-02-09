@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a one-page website/landing page for the PhysioTrack app, which asks users about their day, provides a health score, and offers tips.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- PhysioTrack hero illustration featuring a person doing gentle physiotherapy stretches with abstract health/metrics elements (physiotrack-hero.dim_1600x900.png)\n- Minimal, modern app mark/logo symbol (no text), health/physio inspired (physiotrack-mark.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-website-one-route-for-the-physiotrack-app-that-clearly-explains-what-the-app-does-asks-users-about-their-day-generates-a-health-score-and-provides-tips",
+      "title": "Create a single-page website (one route) for the PhysioTrack app that clearly explains what the app does: asks users about their day, generates a health score, and provides tips.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-interactive-daily-check-in-section-on-the-same-page-with-a-short-questionnaire-e-g-sleep-stress-pain-soreness-activity-hydration-mood-and-a-submit-action-that-calculates-and-displays-a-health-score-0-100-along-with-3-5-actionable-tips-based-on-the-answers",
+      "title": "Add an interactive “Daily Check-in” section on the same page with a short questionnaire (e.g., sleep, stress, pain/soreness, activity, hydration, mood) and a submit action that calculates and displays a health score (0–100) along with 3–5 actionable tips based on the answers.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-establish-a-coherent-distinctive-visual-theme-for-the-one-page-site-colors-typography-spacing-and-component-styling-and-apply-it-consistently-across-hero-sections-form-and-score-tips-output-avoid-a-blue-purple-dominant-palette",
+      "title": "Establish a coherent, distinctive visual theme for the one-page site (colors, typography, spacing, and component styling) and apply it consistently across hero, sections, form, and score/tips output. Avoid a blue/purple-dominant palette.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-image-assets-for-the-physiotrack-one-page-site-and-render-them-on-the-page-served-from-frontend-public-assets-generated",
+      "title": "Add generated static image assets for the PhysioTrack one-page site and render them on the page (served from frontend/public/assets/generated).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a one-page website (single-page landing page) for the PhysioTrack app describing its daily check-in, health scoring, and tips features, accessible via a shareable link.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "PhysioTrack",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
