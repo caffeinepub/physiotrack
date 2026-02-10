@@ -4,7 +4,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import DailyCheckIn from './DailyCheckIn';
 
-export default function PhysioTrackLanding() {
+interface PhysioTrackLandingProps {
+  onNavigateToQuiz: () => void;
+}
+
+export default function PhysioTrackLanding({ onNavigateToQuiz }: PhysioTrackLandingProps) {
   const [showCheckIn, setShowCheckIn] = useState(false);
 
   const scrollToCheckIn = () => {
@@ -27,9 +31,14 @@ export default function PhysioTrackLanding() {
             />
             <span className="text-xl font-display font-bold text-foreground">PhysioTrack</span>
           </div>
-          <Button onClick={scrollToCheckIn} className="font-medium">
-            Start Check-In
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button onClick={onNavigateToQuiz} variant="outline" className="font-medium">
+              Take Quiz
+            </Button>
+            <Button onClick={scrollToCheckIn} className="font-medium">
+              Start Check-In
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -49,6 +58,9 @@ export default function PhysioTrackLanding() {
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" onClick={scrollToCheckIn} className="font-medium">
                   Take Your Daily Check-In
+                </Button>
+                <Button size="lg" variant="secondary" onClick={onNavigateToQuiz} className="font-medium">
+                  Take Quiz
                 </Button>
                 <Button size="lg" variant="outline" onClick={() => {
                   document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
@@ -222,21 +234,12 @@ export default function PhysioTrackLanding() {
 
       {/* Footer */}
       <footer className="border-t py-8 mt-auto bg-card/50">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>
-            © 2026. Built with <Heart className="inline h-4 w-4 text-accent" /> using{' '}
-            <a 
-              href="https://caffeine.ai" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-accent transition-colors font-medium"
-            >
-              caffeine.ai
-            </a>
-          </p>
+        <div className="container mx-auto px-4">
+          <div className="text-center text-sm text-muted-foreground">
+            <p>Made by Aanya, Aarin, Kaavya, Uday, Ridhi</p>
+          </div>
         </div>
       </footer>
     </div>
   );
 }
-

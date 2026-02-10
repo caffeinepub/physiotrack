@@ -1,105 +1,38 @@
 {
   "kind": "build_request",
-  "title": "One-page PhysioTrack landing + daily check-in scoring UI",
+  "title": "Add prominent Take Quiz button on landing page",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a single-page website (one route) for the PhysioTrack app that clearly explains what the app does: asks users about their day, generates a health score, and provides tips.",
+      "id": "REQ-7",
+      "text": "Add an additional large, prominent \"Take Quiz\" button in the main content area of the landing page (not only in the header corner) that navigates to the quiz view via the existing onNavigateToQuiz handler.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "create a website for my app, PhysioTrack which asks you about your day and gives you a health score based on that, it gives you tips aswell, make one page for the link"
+          "please add one more big button for the quiz on the main page since the \"take quiz\" option is very small and only in the corner"
         ]
       },
       "acceptanceCriteria": [
-        "Navigating to the app root shows a single-page layout (no additional pages required to understand/use the site).",
-        "The page includes clear sections describing: daily check-in, health score output, and tips guidance.",
-        "All user-facing text is in English and references the product name “PhysioTrack”."
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Add an interactive “Daily Check-in” section on the same page with a short questionnaire (e.g., sleep, stress, pain/soreness, activity, hydration, mood) and a submit action that calculates and displays a health score (0–100) along with 3–5 actionable tips based on the answers.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "asks you about your day and gives you a health score based on that, it gives you tips aswell"
-        ]
-      },
-      "acceptanceCriteria": [
-        "The user can fill out the daily check-in inputs and submit without leaving the page.",
-        "After submit, the UI displays a numeric health score between 0 and 100.",
-        "After submit, the UI displays a list of tips that changes based on the user’s answers (not a fixed, always-identical list).",
-        "The UI includes a clear way to retake/edit the check-in and recalculate the score."
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Establish a coherent, distinctive visual theme for the one-page site (colors, typography, spacing, and component styling) and apply it consistently across hero, sections, form, and score/tips output. Avoid a blue/purple-dominant palette.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "create a website for my app, PhysioTrack"
-        ]
-      },
-      "acceptanceCriteria": [
-        "The page uses a consistent design system (buttons, inputs, cards, headings) aligned to one chosen theme.",
-        "The primary palette is not blue/purple-dominant.",
-        "The layout is responsive and remains usable on mobile and desktop."
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "text": "Add generated static image assets for the PhysioTrack one-page site and render them on the page (served from frontend/public/assets/generated).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "create a website for my app, PhysioTrack"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All required generated images are present under frontend/public/assets/generated with the exact filenames specified.",
-        "The landing page renders the generated images (e.g., hero/brand mark) without fetching them from the backend."
+        "On the landing page (PhysioTrackLanding), there is a clearly visible large \"Take Quiz\" button within the hero section or other main body content area (not just in the top-right header button group).",
+        "Clicking the new large \"Take Quiz\" button navigates to the quiz view using the existing navigation flow (App view switches to 'quiz').",
+        "The existing small header \"Take Quiz\" button remains functional.",
+        "The new large button uses existing UI components (shadcn Button) and is visually comparable in prominence to other primary CTAs (e.g., size=\"lg\").",
+        "Layout remains responsive: the button is easily tappable and does not overlap other content on small screens."
       ]
     }
   ],
   "constraints": [
-    "Frontend: Do not edit files under frontend/src/components/ui or any immutable paths listed by the system (compose them instead).",
-    "Backend: Keep to a single Motoko actor if backend work becomes necessary; do not introduce additional services or databases."
+    "Do not modify files under frontend/immutablePaths (e.g., frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui)."
   ],
   "nonGoals": [
-    "Implementing Internet Identity login/authentication.",
-    "Persisting user check-ins or scores across sessions (no backend storage required for this request).",
-    "Building multiple pages, dashboards, or admin panels beyond the single landing page."
+    "Do not add new quiz questions, scoring logic, or change quiz behavior.",
+    "Do not add new routes or URL-based navigation; continue using the existing local state view switching in App.tsx."
   ],
   "imageRequirements": {
-    "required": [
-      "PhysioTrack hero illustration featuring a person doing gentle physiotherapy stretches with abstract health/metrics elements (physiotrack-hero.dim_1600x900.png)",
-      "Minimal, modern app mark/logo symbol (no text), health/physio inspired (physiotrack-mark.dim_512x512.png)"
-    ],
+    "required": [],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }

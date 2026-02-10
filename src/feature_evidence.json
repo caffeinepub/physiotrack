@@ -2,68 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-single-page-website-one-route-for-the-physiotrack-app-that-clearly-explains-what-the-app-does-asks-users-about-their-day-generates-a-health-score-and-provides-tips",
-      "featureTitle": "Create a single-page website (one route) for the PhysioTrack app that clearly explains what the app does: asks users about their day, generates a health score, and provides tips.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/PhysioTrackLanding.tsx",
-        "frontend/src/main.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-an-interactive-daily-check-in-section-on-the-same-page-with-a-short-questionnaire-e-g-sleep-stress-pain-soreness-activity-hydration-mood-and-a-submit-action-that-calculates-and-displays-a-health-score-0-100-along-with-3-5-actionable-tips-based-on-the-answers",
-      "featureTitle": "Add an interactive “Daily Check-in” section on the same page with a short questionnaire (e.g., sleep, stress, pain/soreness, activity, hydration, mood) and a submit action that calculates and displays a health score (0–100) along with 3–5 actionable tips based on the answers.",
-      "files": [
-        "frontend/src/components/DailyCheckIn.tsx",
-        "frontend/src/components/PhysioTrackLanding.tsx",
-        "frontend/src/lib/scoring.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-establish-a-coherent-distinctive-visual-theme-for-the-one-page-site-colors-typography-spacing-and-component-styling-and-apply-it-consistently-across-hero-sections-form-and-score-tips-output-avoid-a-blue-purple-dominant-palette",
-      "featureTitle": "Establish a coherent, distinctive visual theme for the one-page site (colors, typography, spacing, and component styling) and apply it consistently across hero, sections, form, and score/tips output. Avoid a blue/purple-dominant palette.",
-      "files": [
-        "frontend/src/components/DailyCheckIn.tsx",
-        "frontend/src/components/PhysioTrackLanding.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-generated-static-image-assets-for-the-physiotrack-one-page-site-and-render-them-on-the-page-served-from-frontend-public-assets-generated",
-      "featureTitle": "Add generated static image assets for the PhysioTrack one-page site and render them on the page (served from frontend/public/assets/generated).",
+      "featureId": "feature-add-an-additional-large-prominent-take-quiz-button-in-the-main-content-area-of-the-landing-page-not-only-in-the-header-corner-that-navigates-to-the-quiz-view-via-the-existing-onnavigatetoquiz-handler",
+      "featureTitle": "Add an additional large, prominent \"Take Quiz\" button in the main content area of the landing page (not only in the header corner) that navigates to the quiz view via the existing onNavigateToQuiz handler.",
       "files": [
         "frontend/src/components/PhysioTrackLanding.tsx"
       ],
@@ -75,7 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-4"
+        "REQ-7"
       ],
       "confidence": "high"
     }

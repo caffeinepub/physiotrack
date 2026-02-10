@@ -1,109 +1,23 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "PhysioTrack one-page landing + daily check-in scoring UI (frontend-only)",
+  "title": "Add prominent Take Quiz CTA in landing page hero",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Build a single-route PhysioTrack landing page that explains daily check-in, health score, and tips.",
+      "id": "REQ-7",
+      "summary": "Add a large, prominent \"Take Quiz\" button in the landing page main content (hero/body) that uses the existing onNavigateToQuiz handler, without affecting the existing header button or view-switching flow.",
       "acceptanceCriteria": [
-        "Navigating to the app root shows a single-page layout (no additional pages required to understand/use the site).",
-        "The page includes clear sections describing: daily check-in, health score output, and tips guidance.",
-        "All user-facing text is in English and references the product name “PhysioTrack”."
+        "On the landing page (PhysioTrackLanding), there is a clearly visible large \"Take Quiz\" button within the hero section or other main body content area (not just in the top-right header button group).",
+        "Clicking the new large \"Take Quiz\" button navigates to the quiz view using the existing navigation flow (App view switches to 'quiz').",
+        "The existing small header \"Take Quiz\" button remains functional.",
+        "The new large button uses existing UI components (shadcn Button) and is visually comparable in prominence to other primary CTAs (e.g., size=\"lg\").",
+        "Layout remains responsive: the button is easily tappable and does not overlap other content on small screens."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
-          "operation": "create",
-          "description": "Create the single-route app shell that renders the one-page PhysioTrack landing content at the root (no router required) and composes the hero + sections + Daily Check-in section."
-        },
-        {
-          "path": "frontend/src/components/PhysioTrackLanding.tsx",
-          "operation": "create",
-          "description": "Implement the one-page landing layout with clear English sections: (1) hero/what PhysioTrack does, (2) how the daily check-in works, (3) health score explanation, (4) tips guidance; include calls-to-action that scroll to the Daily Check-in section."
-        },
-        {
-          "path": "frontend/src/main.tsx",
-          "operation": "modify",
-          "description": "Ensure the root render continues to mount the single-page App correctly once App.tsx exists and that global styles import resolves (keep one-page navigation only)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Add an interactive Daily Check-in questionnaire with submit, 0–100 score calculation, variable tips, and a retake/edit flow.",
-      "acceptanceCriteria": [
-        "The user can fill out the daily check-in inputs and submit without leaving the page.",
-        "After submit, the UI displays a numeric health score between 0 and 100.",
-        "After submit, the UI displays a list of tips that changes based on the user’s answers (not a fixed, always-identical list).",
-        "The UI includes a clear way to retake/edit the check-in and recalculate the score."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/DailyCheckIn.tsx",
-          "operation": "create",
-          "description": "Create the interactive Daily Check-in UI (sleep, stress, pain/soreness, activity, hydration, mood) with local state, a submit action, results display (score + 3–5 tips), and a clear retake/edit control. Use shadcn-ui components (e.g., Card, Button, Input/Slider, Label) to provide consistent form and card styling; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/lib/scoring.ts",
-          "operation": "create",
-          "description": "Implement pure frontend scoring utilities that convert questionnaire answers into a 0–100 score and generate 3–5 tips that vary based on answer thresholds (no persistence, no backend calls)."
-        },
-        {
           "path": "frontend/src/components/PhysioTrackLanding.tsx",
           "operation": "modify",
-          "description": "Wire the DailyCheckIn component into the landing page (same route) and ensure the score/tips output is presented within the page flow (no navigation to another page)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Create and apply a cohesive visual theme (non blue/purple-dominant) with responsive layout and consistent component styling.",
-      "acceptanceCriteria": [
-        "The page uses a consistent design system (buttons, inputs, cards, headings) aligned to one chosen theme.",
-        "The primary palette is not blue/purple-dominant.",
-        "The layout is responsive and remains usable on mobile and desktop."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "create",
-          "description": "Add global theme tokens (CSS variables used by Tailwind/shadcn styling) and base typography/spacing defaults using a distinctive non-blue/purple-dominant palette (e.g., warm neutrals + green/amber accents), ensuring consistent styling across hero, sections, form, and output."
-        },
-        {
-          "path": "frontend/src/components/PhysioTrackLanding.tsx",
-          "operation": "modify",
-          "description": "Apply the chosen theme consistently using Tailwind utility classes and shadcn-ui composition for headings, sections, cards, and CTAs; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/DailyCheckIn.tsx",
-          "operation": "modify",
-          "description": "Align the Daily Check-in form controls and results (score/tips) to the shared design system (consistent spacing, button styles, card layout) and ensure mobile-first responsiveness; verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Add required generated static images under frontend/public/assets/generated and render them on the one-page site.",
-      "acceptanceCriteria": [
-        "All required generated images are present under frontend/public/assets/generated with the exact filenames specified.",
-        "The landing page renders the generated images (e.g., hero/brand mark) without fetching them from the backend."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/assets/generated/physiotrack-hero.dim_1600x900.png",
-          "operation": "create",
-          "description": "Add the generated static hero illustration asset at the exact path frontend/public/assets/generated/physiotrack-hero.dim_1600x900.png for direct static serving."
-        },
-        {
-          "path": "frontend/public/assets/generated/physiotrack-mark.dim_512x512.png",
-          "operation": "create",
-          "description": "Add the generated static app mark/logo asset at the exact path frontend/public/assets/generated/physiotrack-mark.dim_512x512.png for direct static serving."
-        },
-        {
-          "path": "frontend/src/components/PhysioTrackLanding.tsx",
-          "operation": "modify",
-          "description": "Render the generated images from frontend/public/assets/generated/physiotrack-hero.dim_1600x900.png and frontend/public/assets/generated/physiotrack-mark.dim_512x512.png within the hero/branding area using standard static asset referencing (no backend fetch)."
+          "description": "In the Hero Section CTA button row, add an additional large \"Take Quiz\" button that calls the existing onNavigateToQuiz prop (no new navigation flow). Use the existing shadcn-ui Button component to match other CTAs (e.g., size=\"lg\") and apply responsive layout classes (e.g., keep within the existing flex-wrap group and ensure it remains comfortably tappable on small screens). Verify the component's usage instructions before implementing."
         }
       ]
     }
